@@ -7,12 +7,66 @@
   font-family: "Roboto", sans-serif;
 }
 
-.card {
-  width: 400px;
-  height: 600px;
-  background: #fafafa;
-  border: 1px solid #ffffff;
+.app {
+  background: transparent;
+  border: 1px solid #ccc;
+  width: 90%;
+  max-width: 600px;
+  /* margin: 100px auto 0; */
+  border-radius: 12px;
+  padding: 30px;
 }
+
+.quiz {
+  padding: 20px 0;
+}
+
+.quiz .btn {
+  background: transparent;
+  color: #fafafa;
+  font-weight: 500;
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: left;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: ll .3s;
+}
+
+.quiz .btn:hover:not([disabled]) {
+  background: #fafafa;
+  color: #1d1d1d;
+}
+
+.quiz .btn:disabled {
+  cursor: no-drop;
+}
+
+.quiz #next-btn {
+  background: transparent;
+  color: #fafafa;
+  font-weight: 5000;
+  width: 150px;
+  border: none;
+  padding: 10px;
+  margin: 20px auto 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  text-align: center;
+  display: none;
+}
+
+.correct:focus, .correct:active {
+  border: 1px solid #35dd1f;
+}
+
+.incorrect:focus, .incorrect:active {
+  border: 1px solid #e2431b;
+}
+
 
 body {
   height: 100vh;
