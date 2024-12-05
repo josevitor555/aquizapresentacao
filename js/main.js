@@ -1,1 +1,1 @@
-console.log('hello!');
+alert("Bem vindo(a)!")
