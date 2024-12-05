@@ -25,5 +25,23 @@ export const quesions = [
       { text: "C) Comer apenas fast food", correct: false },
       { text: "D) Estudar sem pausas", correct: false }
     ]
+  },
+  {
+    question: "Qual é o órgão do corpo humano responsável por filtrar toxinas do sangue?",
+    answers: [
+      { text: "A) Coração", correct: false },
+      { text: "B) Fígado", correct: true },
+      { text: "C) Rim", correct: false },
+      { text: "D) Pulmão", correct: false }
+    ]
+  },
+  {
+    question: "O que é mais importante para manter os dentes saudáveis?",
+    answers: [
+      { text: "A) Escovar os dentes após as refeições", correct: true },
+      { text: "B) Comer doces à vontade", correct: false },
+      { text: "C) Escovar os dentes apenas à noite", correct: false },
+      { text: "D) Evitar comer frutas cítricas", correct: false }
+    ]
   }
 ]

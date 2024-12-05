@@ -52,8 +52,9 @@ function selectAnswer(correct) {
   if (isCorrect) {
     selectedButton.classList.add("correct");
     console.log("Classe 'correct' aplicada ao botão:", selectedButton);
-    
-    score++;
+
+    score++; // Somando os pontos
+
   } else {
     selectedButton.classList.add("incorrect");
     console.log("Classe 'incorrect' aplicada ao botão:", selectedButton);
@@ -71,10 +72,14 @@ function selectAnswer(correct) {
 
 function showScore() {
   resetState();
-
+  
+  // Exibindo a pontuação final
   questionElement.innerHTML = `Você acertou ${score} de ${quesions.length}`;
   nextButton.innerHTML = "Jogar Novamente";
   nextButton.style.display = "block";
+  
+  // Exibindo os participantes do grupo
+  showParticipants();
 }
 
 function handleNextButton() {
@@ -84,6 +89,50 @@ function handleNextButton() {
   } else {
     showScore();
   }
+}
+
+function showParticipants() {
+  const flexibleContainer = document.createElement("div");
+  flexibleContainer.classList.add("participants-container"); // estilizar ess aclasse com css
+
+  flexibleContainer.innerHTML = `
+    
+  <div class="flex items-center gap-4">
+      <img class="img-small rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="User">
+      <div class="font-mediumtext-white">
+          <div class="text-base text-white"> José Vitor </div>
+          <div class="text-sm text-gray-400"> Participante do Grupo </div>
+      </div>
+  </div>
+  
+  <div class="flex items-center gap-4">
+      <img class="img-small rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="User">
+      <div class="font-mediumtext-white">
+          <div class="text-base text-white"> Anderson Veloso </div>
+          <div class="text-sm text-gray-400"> Participante do Grupo </div>
+      </div>
+  </div>
+
+  <div class="flex items-center gap-4">
+      <img class="img-small rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="User">
+      <div class="font-mediumtext-white">
+          <div class="text-base text-white"> Antônio Carlos </div>
+          <div class="text-sm text-gray-400"> Participante do Grupo </div>
+      </div>
+  </div>
+
+  <div class="flex items-center gap-4">
+      <img class="img-small rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="User">
+      <div class="font-mediumtext-white">
+          <div class="text-base text-white"> Jociel </div>
+          <div class="text-sm text-gray-400"> Participante do Grupo </div>
+      </div>
+  </div>
+
+  `;
+
+  const app = document.querySelector(".app");
+  app.appendChild(flexibleContainer);
 }
 
 nextButton.addEventListener("click", () => {

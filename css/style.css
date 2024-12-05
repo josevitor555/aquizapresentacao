@@ -59,14 +59,38 @@
   display: none;
 }
 
-.correct:focus, .correct:active {
+/* Estilizando as classes criadas com JavaScript */
+.correct {
   border: 1px solid #35dd1f;
 }
 
-.incorrect:focus, .incorrect:active {
+.incorrect {
   border: 1px solid #e2431b;
 }
 
+.participants-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  padding: 20px;
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+  background-color: #1d1e20;
+}
+
+/* Classes do Tailwind */
+.rounded-full {
+  border-radius: 50%;
+}
+
+.img-small {
+  width: 40px;
+  height: 40px; /* Define a altura pequena */
+}
 
 body {
   height: 100vh;
