@@ -50,10 +50,7 @@ function selectAnswer(correct) {
   const isCorrect = selectedButton.dataset.correct === "true";
 
   if (isCorrect) {
-    selectedButton.classList.add("correct");
     score++; // Somando os pontos
-  } else {
-    selectedButton.classList.add("incorrect");
   }
 
   Array.from(answerButtons.children).forEach(button => {
@@ -98,33 +95,33 @@ function showParticipants() {
     participantsContainer.innerHTML = `
       <div class="item flex items-center gap-4">
         <img class="img-small rounded-full" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="User">
-        <div class="font-medium text-white">
-          <div class="text-base text-white">José Vitor</div>
-          <div class="text-sm text-gray-400">Participante do Grupo</div>
+        <div class="text-white">
+          <div class="text-base text-black font-medium">José Vitor</div>
+          <div class="text-sm text-gray-950 font-light">Participante do Grupo</div>
         </div>
       </div>
 
       <div class="item flex items-center gap-4">
         <img class="img-small rounded-full" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="User">
-        <div class="font-medium text-white">
-          <div class="text-base text-white">Anderson Veloso</div>
-          <div class="text-sm text-gray-400">Participante do Grupo</div>
+        <div class="text-white">
+          <div class="text-base text-black font-medium">Anderson Veloso</div>
+          <div class="text-sm text-gray-950 font-light">Participante do Grupo</div>
         </div>
       </div>
 
       <div class="item flex items-center gap-4">
         <img class="img-small rounded-full" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="User">
-        <div class="font-medium text-white">
-          <div class="text-base text-white">Antônio Carlos</div>
-          <div class="text-sm text-gray-400">Participante do Grupo</div>
+        <div class="text-black">
+          <div class="text-base text-black font-medium">Antônio Carlos</div>
+          <div class="text-sm text-gray-950 font-light">Participante do Grupo</div>
         </div>
       </div>
 
       <div class="item flex items-center gap-4">
         <img class="img-small rounded-full" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="User">
-        <div class="font-medium text-white">
-          <div class="text-base text-white">Jociel</div>
-          <div class="text-sm text-gray-400">Participante do Grupo</div>
+        <div class="text-white">
+          <div class="text-base text-black font-medium">Jociel</div>
+          <div class="text-sm text-gray-950 font-light">Participante do Grupo</div>
         </div>
       </div>
     `;

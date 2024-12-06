@@ -23,7 +23,7 @@
 
 .quiz .btn {
   background: transparent;
-  color: #fafafa;
+  color: #161618;
   font-weight: 500;
   width: 100%;
   border: 1px solid #ccc;
@@ -36,8 +36,8 @@
 }
 
 .quiz .btn:hover:not([disabled]) {
-  background: #fafafa;
-  color: #1d1d1d;
+  background: #161618;
+  color: #fafafa;
 }
 
 .quiz .btn:disabled {
@@ -46,7 +46,7 @@
 
 .quiz #next-btn {
   background: transparent;
-  color: #fafafa;
+  color: #161618;
   font-weight: 5000;
   width: 150px;
   border: none;
@@ -60,14 +60,6 @@
 }
 
 /* Estilizando as classes criadas com JavaScript */
-.correct {
-  border: 1px solid #35dd1f;
-}
-
-.incorrect {
-  border: 1px solid #e2431b;
-}
-
 .participants-container {
   padding: 10px;
   width: 100%;
@@ -77,14 +69,9 @@
 
 .participants-container .item {
   margin: 12px auto;
-  background: #161618;
+  background: #e4e5e6;
   border-radius: 6px;
-  padding: 4px;
-  transition: .4s ease;
-}
-
-.participants-container .item:hover {
-  background: #282829;
+  padding: 6px 4px;
   cursor: pointer;
 }
 
@@ -97,11 +84,17 @@
   height: 40px;
 }
 
+@media (max-width: 1080px) {
+  .app span {
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
 body {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(-45deg, #1a1a1b, #000000);
-
+  background: #fafafa;
 }
