@@ -6,7 +6,8 @@ const nextButton = document.getElementById("next-btn");
 
 let currentQuestionIndex = 0;
 let score = 0;
-
+let participantsContainer = null;
+let participantsDisplayed = false;
 
 function startQuiz() {
   currentQuestionIndex = 0;
@@ -21,7 +22,6 @@ function showQuestion() {
   let currentQuestion = quesions[currentQuestionIndex];
   let questionNo = currentQuestionIndex + 1;
   questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
-
 
   currentQuestion.answers.forEach(answer => {
     const button = document.createElement("button");
@@ -51,13 +51,9 @@ function selectAnswer(correct) {
 
   if (isCorrect) {
     selectedButton.classList.add("correct");
-    console.log("Classe 'correct' aplicada ao botão:", selectedButton);
-
     score++; // Somando os pontos
-
   } else {
     selectedButton.classList.add("incorrect");
-    console.log("Classe 'incorrect' aplicada ao botão:", selectedButton);
   }
 
   Array.from(answerButtons.children).forEach(button => {
@@ -67,19 +63,21 @@ function selectAnswer(correct) {
     button.disabled = true;
   });
 
-  nextButton.style.display =  "block";
+  nextButton.style.display = "block";
 }
 
 function showScore() {
   resetState();
   
   // Exibindo a pontuação final
-  questionElement.innerHTML = `Você acertou ${score} de ${quesions.length}`;
+  questionElement.innerHTML = `Você acertou ${score} de ${quesions.length}!`;
   nextButton.innerHTML = "Jogar Novamente";
   nextButton.style.display = "block";
-  
-  // Exibindo os participantes do grupo
-  showParticipants();
+
+  // Só exibe os participantes se não foram exibidos antes
+  if (!participantsDisplayed) {
+    showParticipants();
+  }
 }
 
 function handleNextButton() {
@@ -92,47 +90,55 @@ function handleNextButton() {
 }
 
 function showParticipants() {
-  const flexibleContainer = document.createElement("div");
-  flexibleContainer.classList.add("participants-container"); // estilizar ess aclasse com css
 
-  flexibleContainer.innerHTML = `
-    
-  <div class="flex items-center gap-4">
-      <img class="img-small rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="User">
-      <div class="font-mediumtext-white">
-          <div class="text-base text-white"> José Vitor </div>
-          <div class="text-sm text-gray-400"> Participante do Grupo </div>
+  if (!participantsContainer) {
+    participantsContainer = document.createElement("div");
+
+    participantsContainer.classList.add("participants-container");
+    participantsContainer.innerHTML = `
+      <div class="item flex items-center gap-4">
+        <img class="img-small rounded-full" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="User">
+        <div class="font-medium text-white">
+          <div class="text-base text-white">José Vitor</div>
+          <div class="text-sm text-gray-400">Participante do Grupo</div>
+        </div>
       </div>
-  </div>
-  
-  <div class="flex items-center gap-4">
-      <img class="img-small rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="User">
-      <div class="font-mediumtext-white">
-          <div class="text-base text-white"> Anderson Veloso </div>
-          <div class="text-sm text-gray-400"> Participante do Grupo </div>
+
+      <div class="item flex items-center gap-4">
+        <img class="img-small rounded-full" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="User">
+        <div class="font-medium text-white">
+          <div class="text-base text-white">Anderson Veloso</div>
+          <div class="text-sm text-gray-400">Participante do Grupo</div>
+        </div>
       </div>
-  </div>
 
-  <div class="flex items-center gap-4">
-      <img class="img-small rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="User">
-      <div class="font-mediumtext-white">
-          <div class="text-base text-white"> Antônio Carlos </div>
-          <div class="text-sm text-gray-400"> Participante do Grupo </div>
+      <div class="item flex items-center gap-4">
+        <img class="img-small rounded-full" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="User">
+        <div class="font-medium text-white">
+          <div class="text-base text-white">Antônio Carlos</div>
+          <div class="text-sm text-gray-400">Participante do Grupo</div>
+        </div>
       </div>
-  </div>
 
-  <div class="flex items-center gap-4">
-      <img class="img-small rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="User">
-      <div class="font-mediumtext-white">
-          <div class="text-base text-white"> Jociel </div>
-          <div class="text-sm text-gray-400"> Participante do Grupo </div>
+      <div class="item flex items-center gap-4">
+        <img class="img-small rounded-full" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="User">
+        <div class="font-medium text-white">
+          <div class="text-base text-white">Jociel</div>
+          <div class="text-sm text-gray-400">Participante do Grupo</div>
+        </div>
       </div>
-  </div>
+    `;
 
-  `;
+    const quizContainer = document.querySelector(".quiz");
+    const nextButton = document.querySelector("#next-btn");
 
-  const app = document.querySelector(".app");
-  app.appendChild(flexibleContainer);
+    if (quizContainer && nextButton) {
+      quizContainer.insertBefore(participantsContainer, nextButton);
+    }
+  }
+
+  participantsContainer.style.display = "block";
+  participantsDisplayed = true; // Marcar que os participantes foram exibidos
 }
 
 nextButton.addEventListener("click", () => {
@@ -140,7 +146,11 @@ nextButton.addEventListener("click", () => {
     handleNextButton();
   } else {
     startQuiz();
+    participantsDisplayed = false;  // Resetar o controle para permitir que os participantes reapareçam na próxima rodada
+    if (participantsContainer) {
+      participantsContainer.style.display = "none"; // Esconder o contêiner de participantes ao reiniciar o quiz
+    }
   }
 });
 
-document.addEventListener("DOMContentLoaded", startQuiz);
+document.addEventListener("DOMContentLoaded", startQuiz); // Inicia o quiz ao carregar a página
