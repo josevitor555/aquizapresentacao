@@ -69,7 +69,7 @@
 
 .participants-container .item {
   margin: 12px auto;
-  background: #e4e5e6;
+  background: transparent;
   border-radius: 6px;
   padding: 6px 4px;
   cursor: pointer;
@@ -85,9 +85,9 @@
 }
 
 @media (max-width: 1080px) {
-  .app span {
-    font-size: 14px;
-    font-weight: 500;
+  .parent {
+    display: flex;
+    flex-direction: column;
   }
 }
 
