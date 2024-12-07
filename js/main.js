@@ -67,7 +67,7 @@ function showScore() {
   resetState();
   
   // Exibindo a pontuação final
-  questionElement.innerHTML = `Você acertou ${score} de ${quesions.length}!`;
+  questionElement.innerHTML = `Vocês acertaram ${score} de ${quesions.length}!`;
   nextButton.innerHTML = "Jogar Novamente";
   nextButton.style.display = "block";
 

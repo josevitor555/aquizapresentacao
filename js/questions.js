@@ -1,47 +1,74 @@
 export const quesions = [
   {
-    question: "Qual é a postura correta para evitar dores nas costas na escola?",
+    question: "De acordo com a Organização Mundial da Saúde (OMS), a saúde é definida como:",
     answers: [
-      { text: "A) Sentar com as costas retas e pés no chão", correct: true },
-      { text: "B) Cruzar as pernas e inclinar para frente", correct: false },
-      { text: "C) Inclinar para trás e apoiar os pés na cadeira", correct: false },
-      { text: "D) Sentar de qualquer forma, desde que confortável", correct: false }
+      { text: "A) A ausência de doenças ou enfermidades.", correct: false },
+      { text: "B) Um estado de completo bem-estar físico, mental e social.", correct: true },
+      { text: "C) A capacidade de manter uma rotina saudável.", correct: false },
+      { text: "D) Uma condição temporária de equilíbrio corporal", correct: false }
     ]
   },
   {
-    question: "Qual é a quantidade recomendada de horas de sono para crianças e adolescentes?",
+    question: "O conceito ampliado de saúde envolve todos os aspectos abaixo, exceto:",
     answers: [
-      { text: "A) 4 a 6 horas", correct: false },
-      { text: "B) 6 a 8 horas", correct: false },
-      { text: "C) 8 a 10 horas", correct: true },
-      { text: "D) 10 a 12 horas", correct: false }
+      { text: "A) Bem-estar físico, como alimentação balanceada e prática de exercícios.", correct: false },
+      { text: "B) Bem-estar mental, incluindo a capacidade de lidar com desafios diários.", correct: false },
+      { text: "C) Bem-estar financeiro, relacionado à independência econômica.", correct: true },
+      { text: "D) Bem-estar social, referente à qualidade das interações interpessoais.", correct: false }
     ]
   },
   {
-    question: "O que significa sedentarismo?",
+    question: "Quais são os principais desafios enfrentados pelas escolas na promoção da saúde física dos alunos, exceto:",
     answers: [
-      { text: "A) Dormir tarde todos os dias", correct: false },
-      { text: "B) Não praticar atividades físicas regularmente", correct: true },
-      { text: "C) Comer apenas fast food", correct: false },
-      { text: "D) Estudar sem pausas", correct: false }
+      { text: "A) Sedentarismo causado pelo uso excessivo de dispositivos eletrônicos.", correct: false },
+      { text: "B) Alimentação inadequada com excesso de alimentos processados.", correct: false },
+      { text: "C) Falta de infraestrutura para atividades físicas.", correct: false },
+      { text: "D) Implementação de programas de incentivo à prática esportiva.", correct: true }
     ]
   },
   {
-    question: "Qual é o órgão do corpo humano responsável por filtrar toxinas do sangue?",
+    question: "Qual das estratégias abaixo pode ser considerada eficaz em ações educativas sobre nutrição nas escolas?",
     answers: [
-      { text: "A) Coração", correct: false },
-      { text: "B) Fígado", correct: true },
-      { text: "C) Rim", correct: false },
-      { text: "D) Pulmão", correct: false }
+      { text: "A) Oferecer apenas alimentos industrializados por serem mais baratos.", correct: false },
+      { text: "B) Implementar cardápios criados por nutricionistas, priorizando alimentos frescos e saudáveis.", correct: true },
+      { text: "C) Eliminar a oferta de frutas e vegetais nas refeições escolares.", correct: false },
+      { text: "D) Substituir aulas sobre nutrição por outras disciplinas.", correct: false }
     ]
   },
   {
-    question: "O que é mais importante para manter os dentes saudáveis?",
+    question: "Quais fatores contribuem para o aumento de problemas de saúde mental entre estudantes?",
     answers: [
-      { text: "A) Escovar os dentes após as refeições", correct: true },
-      { text: "B) Comer doces à vontade", correct: false },
-      { text: "C) Escovar os dentes apenas à noite", correct: false },
-      { text: "D) Evitar comer frutas cítricas", correct: false }
+      { text: "A) Atividades físicas regulares e meditação.", correct: false },
+      { text: "B) Bullying, pressões acadêmicas e uso excessivo de redes sociais.", correct: true },
+      { text: "C) Programas de acolhimento emocional e apoio psicológico.", correct: true },
+      { text: "D) Realização de rodas de conversa sobre empatia.", correct: false }
+    ]
+  },
+  {
+    question: "Qual das alternativas a seguir é uma estratégia eficaz para promover o bem-estar psicológico nas escolas?",
+    answers: [
+      { text: "A) Reduzir o número de profissionais de apoio psicológico.", correct: false },
+      { text: "B) Ignorar sinais de ansiedade e depressão nos estudantes.", correct: true },
+      { text: "C) Programas de acolhimento emocional e apoio psicológico.", correct: true },
+      { text: "D) Priorizar o desempenho acadêmico em detrimento do apoio emocional.", correct: false }
+    ]
+  },
+  {
+    question: "Quais dos fatores abaixo contribuem diretamente para a evasão escolar, relacionados à saúde social?",
+    answers: [
+      { text: "A) Bullying, exclusão social e discriminação por gênero ou etnia.", correct: true },
+      { text: "B) Promoção de campanhas de diversidade e inclusão.", correct: false },
+      { text: "C) A criação de ambientes acolhedores e de apoio psicológico.", correct: false },
+      { text: "D) Participação em atividades extracurriculares colaborativas.", correct: false }
+    ]
+  },
+  {
+    question: "Qual das alternativas é um desafio enfrentado pelas escolas que pode levar ao isolamento social dos alunos e aumentar a evasão escolar?",
+    answers: [
+      { text: "A) Falta de espaços de convivência e integração social.", correct: true },
+      { text: "B) Promoção de rodas de conversa e atividades de trabalho em equipe.", correct: false },
+      { text: "C) Implementação de programas de mediação de conflitos.", correct: false },
+      { text: "D) Realização de eventos e excursões que incentivem a socialização.", correct: false }
     ]
   }
 ]
