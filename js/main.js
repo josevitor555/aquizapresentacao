@@ -1,8 +1,10 @@
 import { quesions } from "./questions";
+import { themes } from "./themes";
 
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
+const themeMarker = document.getElementById("theme-marker");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -22,6 +24,9 @@ function showQuestion() {
   let currentQuestion = quesions[currentQuestionIndex];
   let questionNo = currentQuestionIndex + 1;
   questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+
+  const currentThemeIndex = Math.floor(currentQuestionIndex / 2);
+  themeMarker.innerHTML = themes[currentThemeIndex];
 
   currentQuestion.answers.forEach(answer => {
     const button = document.createElement("button");
@@ -66,12 +71,10 @@ function selectAnswer(correct) {
 function showScore() {
   resetState();
   
-  // Exibindo a pontuação final
   questionElement.innerHTML = `Vocês acertaram ${score} de ${quesions.length}!`;
   nextButton.innerHTML = "Jogar Novamente";
   nextButton.style.display = "block";
 
-  // Só exibe os participantes se não foram exibidos antes
   if (!participantsDisplayed) {
     showParticipants();
   }
@@ -135,7 +138,7 @@ function showParticipants() {
   }
 
   participantsContainer.style.display = "block";
-  participantsDisplayed = true; // Marcar que os participantes foram exibidos
+  participantsDisplayed = true;
 }
 
 nextButton.addEventListener("click", () => {
@@ -143,11 +146,11 @@ nextButton.addEventListener("click", () => {
     handleNextButton();
   } else {
     startQuiz();
-    participantsDisplayed = false;  // Resetar o controle para permitir que os participantes reapareçam na próxima rodada
+    participantsDisplayed = false;
     if (participantsContainer) {
-      participantsContainer.style.display = "none"; // Esconder o contêiner de participantes ao reiniciar o quiz
+      participantsContainer.style.display = "none";
     }
   }
 });
 
-document.addEventListener("DOMContentLoaded", startQuiz); // Inicia o quiz ao carregar a página
+document.addEventListener("DOMContentLoaded", startQuiz);
