@@ -60,7 +60,7 @@
 }
 
 /* Estilizando as classes criadas com JavaScript */
-.participants-container {
+/* .participants-container {
   padding: 10px;
   width: 100%;
   border-radius: 8px;
@@ -82,6 +82,53 @@
 .img-small {
   width: 40px;
   height: 40px;
+} */
+
+.quiz .result-container {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: transparent;
+  margin-top: 10px;
+}
+
+.result-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.result-item:last-child {
+  border-bottom: none;
+}
+
+.quiz .result-container::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+}
+
+.quiz .result-container::-webkit-scrollbar-button {
+  width: 0px;
+  height: 10px;
+}
+
+.quiz .result-container::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.quiz .result-container::-webkit-scrollbar-thumb:hover {
+  background: #dddddd;
+}
+
+.quiz .result-container::-webkit-scrollbar-thumb:active {
+  background: #fafafa;
+}
+
+.quiz .result-container::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 @media (max-width: 1080px) {
