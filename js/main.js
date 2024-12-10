@@ -87,7 +87,7 @@ function showResults() {
   resetState();
 
   if (!resultDisplayed) {
-    
+
     // Criar o container do gabarito apenas se ele ainda não existir
     resultContainer = document.createElement("div");
     resultContainer.classList.add("result-container");
@@ -106,10 +106,9 @@ function showResults() {
 
       answerDetail.innerHTML = `
         <div>Resposta Correta: <b>${question.answers.find(a => a.correct).text}</b></div>
-        <div>Sua Resposta: ${
-          isCorrect
-            ? `<span class="text-green-500 font-medium"> Você acertou! </span>`
-            : `<span class="text-red-500 font-medium"> Você errou. </span>`
+        <div>Sua Resposta: ${isCorrect
+          ? `<span class="text-green-500 font-medium"> Você acertou! </span>`
+          : `<span class="text-red-500 font-medium"> Você errou. </span>`
         }</div>
       `;
 
