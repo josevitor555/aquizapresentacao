@@ -48,7 +48,7 @@ export const quesions = [
     question: "Qual das alternativas a seguir é uma estratégia eficaz para promover o bem-estar psicológico nas escolas?",
     answers: [
       { text: "A) Reduzir o número de profissionais de apoio psicológico.", correct: false },
-      { text: "B) Ignorar sinais de ansiedade e depressão nos estudantes.", correct: true },
+      { text: "B) Ignorar sinais de ansiedade e depressão nos estudantes.", correct: false },
       { text: "C) Programas de acolhimento emocional e apoio psicológico.", correct: true },
       { text: "D) Priorizar o desempenho acadêmico em detrimento do apoio emocional.", correct: false }
     ]

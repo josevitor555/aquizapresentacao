@@ -105,7 +105,7 @@ function showResults() {
       const isCorrect = index < currentQuestionIndex && quesions[index].userAnswer?.correct;
 
       answerDetail.innerHTML = `
-        <div>Resposta Correta: <b>${question.answers.find(a => a.correct).text}</b></div>
+        <div> Resposta Correta: <b>${question.answers.find(a => a.correct).text}</b> </div>
         <div>Sua Resposta: ${
           isCorrect
             ? `<span class="text-green-500 font-medium"> Você acertou! </span>`
